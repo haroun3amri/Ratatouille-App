@@ -1,0 +1,11 @@
+version: "2.1"
+services:
+  cihm-client:
+    container_name: "fridge-client"
+    build: ./docker/client
+    ports:
+      - 4200:4200
+    volumes:
+      - ./client:/var/opt/client
+      - ./cache/npm:/root/.npm
+

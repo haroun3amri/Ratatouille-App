@@ -1,0 +1,21 @@
+<div id="parent">
+<div class="block center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5nx5ieHqpbtT3ZGonMca_ppltXHOkSRjO45MGiBK6M0neJYt" width="200" height="200">
+  <br>
+  <span><b>Bienvenue {{data.user.fistName}} {{data.user.lastName}} !!</b></span>
+</div>
+
+</div>
+
+<br>
+<br>
+
+<div mat-dialog-actions class="block center" fxLayout="row" fxLayoutAlign="center center">
+  <div>
+    <button mat-button
+            class="save-button mat-primary"
+            (click)="onNoClick()">
+      <b> Acceder à l'interface de commande </b>
+    </button>
+  </div>
+</div>

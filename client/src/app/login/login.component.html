@@ -1,0 +1,33 @@
+<form class="form-field" [formGroup]="form">
+
+  <div class="example-container">
+    <div>
+      <img src="https://sawmill-creek.com/wp-content/uploads/2018/03/Circle-icons-profle.svg.png" width="100" height="100" class="logo-image"/>
+    </div>
+    <p>
+      <mat-form-field appearance="outline" style="width: 700px">
+        <mat-label>Nom d'utilisateur</mat-label>
+        <input matInput placeholder="Veuillez saisir votre login" formControlName="controle1">
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-hint>Login</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" style="width: 700px">
+        <mat-label>mot de passe</mat-label>
+        <input matInput placeholder="Veuillez saisir votre de mot de passe" formControlName="controle2" type="password">
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-hint>mot de passe</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <button mat-raised-button color="primary" style="width: 160px" class="login-button" (click)="login()">Login</button>
+
+    <br>
+    <br>
+    <mat-card *ngIf="showError" style="width: 600px">
+      <span style="font-family: Roboto ; color: red"><b> Votre nom d'utilisateur ou bien le mot de passe sont incorrectes !</b> </span>
+    </mat-card>
+
+  </div>
+</form>

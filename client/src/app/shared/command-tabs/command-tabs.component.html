@@ -1,0 +1,53 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+  <mat-step>
+    <ng-template matStepLabel>Catégorie</ng-template>
+    <app-category (categoryChanged)="categoryChangedHandler($event)"></app-category>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Produits</ng-template>
+    <button style="margin-bottom: 5px" mat-stroked-button color="primary" matStepperPrevious><mat-icon>arrow_back</mat-icon> Etape précédente</button>
+    <app-product #products (productCartChanged)="productCartChangedHandler($event)"
+                 (cartFilled)="cartFilledHandler($event)"></app-product>
+  </mat-step>
+
+  <mat-step >
+    <ng-template matStepLabel>Livraison</ng-template>
+    <button style="margin-bottom: 5px" mat-stroked-button color="primary" matStepperPrevious><mat-icon>arrow_back</mat-icon> Etape précédente</button>
+    <app-driver (deleiveryChoiceChecked)="deleiveryChoiceCheckedHandler($event)"></app-driver>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Marché</ng-template>
+    <button style="margin-bottom: 5px" mat-stroked-button color="primary" matStepperPrevious><mat-icon>arrow_back</mat-icon> Etape précédente</button>
+    <app-choice #choices [deliveryCost]="deliveryCost" [Cart]="Cart"
+                (choiceChanged)="choiceChangedHandler($$event)"></app-choice>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Paiement</ng-template>
+    <button style="margin-bottom: 5px" mat-stroked-button color="primary" matStepperPrevious><mat-icon>arrow_back</mat-icon> Etape précédente</button>
+    <app-paiement (paimentChanged)="paimentChangedHandler($event)"></app-paiement>
+
+  </mat-step>
+
+  <mat-step>
+
+    <ng-template matStepLabel>Fin</ng-template>
+    <div class="wrapper">
+      <div fxLayout="row" fxLayoutAlign="center center"><span
+        style="color: black ; font-family: Roboto, 'Helvetica Neue', sans-serif; font-size: 1em"><b>
+         Votre commande est enregistré . vous ceceverz un email de confimation
+  </b></span></div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <img src="../../assets/logo2.png" width="300" height="300">
+      </div>
+
+    </div>
+    <div>
+      <button mat-button (click)="stepper.reset()">Passer une autre commande</button>
+    </div>
+  </mat-step>
+
+</mat-horizontal-stepper>

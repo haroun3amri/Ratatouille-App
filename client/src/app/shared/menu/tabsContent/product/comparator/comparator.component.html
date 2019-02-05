@@ -1,0 +1,35 @@
+<mat-card style="width: 300px ; position: relative ;">
+      <mat-accordion>
+
+        <mat-expansion-panel *ngFor="let result of comparaisonResult ; index as i">
+          <mat-expansion-panel-header [collapsedHeight]="'100px'" [expandedHeight]="'100px'">
+            <mat-panel-title >
+              <div fxLayout="row" ng-class="{lightCoral: i == 0, lightGrey: i != 0}">
+                <div>
+                  <img src="{{result.shop_logo}}" width="80" height="60">
+                </div>
+                <div fxLayout="column">
+                  <div>
+                    {{result.shop_name}}
+                  </div>
+                </div>
+              </div>
+            </mat-panel-title>
+            <mat-panel-description>
+              <div fxLayout="column">
+                <b style="color: red" *ngIf="i === 0">{{result.total_price | currency:'EUR':true}} </b>
+                <b style="color: black" *ngIf="i !== 0">{{result.total_price | currency:'EUR':true}}  </b>
+
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ul>
+            <li *ngFor="let product of Cart"> {{product.title}} : {{getValue( product , result.shop_name) | currency:'EUR':true}}   <b>x {{product.quantity}}</b> </li>
+
+          </ul>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+</mat-card>
+

@@ -1,0 +1,80 @@
+<div fxLayout="column" fxLayoutAlign="space-around center" style="display: inline-flex;">
+  <div style="margin-right: 350px ">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" fxLayoutAlign="center">
+      <mat-button-toggle value="bold" (click)="initialize()"><mat-icon>view_module</mat-icon>Tous les produits</mat-button-toggle>
+      <mat-button-toggle value="bold" (click)="filterAccordingtoEconomique()"><mat-icon>euro_symbol</mat-icon>Economique</mat-button-toggle>
+      <mat-button-toggle value="italic" (click)="filterAccordingtoBiologique()"><mat-icon>date_range</mat-icon>Biologique</mat-button-toggle>
+      <mat-button-toggle value="underline" (click)="filterAccordingtoFavorite()" ><mat-icon>star_rate</mat-icon>Favoris</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+
+
+  <div *ngIf="Cart.length !== 0" style="margin-left: 150px " fxLayout="column" fxLayoutAlign="space-around center" >
+    <button mat-flat-button color="primary" style="width: 100%"
+            (click)="openDialog()">Afficher le panier <mat-icon>local_grocery_store</mat-icon>
+    </button>
+  </div>
+
+</div>
+
+
+
+
+<div fxLayout="row" style="display: inline-flex">
+
+  <div>
+    <div *ngFor="let i of rows " fxLayout="row" class="cards">
+      <div fxFlex="20" class="example-card" *ngFor="let product of products | slice:(i*ElementNumber):(i+1)*ElementNumber"
+           Style="border-style: dot-dash ; display: inline-flex ; height: 100%"
+           [style.width.%] ="80/ElementNumber"
+      >
+        <mat-card [class.mat-elevation-z8]="true">
+          <mat-card-header>
+            <span class="span-tag-bio" *ngIf="product.tag === 'bio'"><b>{{product.tag}}</b></span>
+            <span class="span-tag-eco" *ngIf="product.tag === 'eco'"><b>{{product.tag}}</b></span>
+            <mat-card-title>{{product.title}}</mat-card-title> :
+
+            <mat-card-subtitle>
+              <span>{{product.category}}</span>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <img src='{{product.imageLink}}' class="card-image" alt="Photo of a Shiba Inu">
+            <span><small>Quantité: x</small><b>{{product.quantity}}</b></span>
+          </mat-card-content>
+          <mat-card-actions>
+
+            <div style="display: inline-flex ; width: 100%">
+              <button mat-button (click)="addToFavorite(product)">
+                <mat-icon matTooltip="Ajouter au favoris" style="color: red" *ngIf="product.isFavorite">favorite</mat-icon>
+                <mat-icon matTooltip="Enlever des favoris" style="color: darkgray" *ngIf="!product.isFavorite">favorite</mat-icon>
+              </button>
+
+              <button mat-button (click)="addToCart(product)">
+                <mat-icon matTooltip="Ajouter au panier" style="color: blue" *ngIf="product.isInCart">local_grocery_store</mat-icon>
+                <mat-icon matTooltip="Enlever du panier" style="color: darkgray" *ngIf="!product.isInCart">local_grocery_store</mat-icon>
+              </button>
+
+              <div fxFlex="column" fxflexalign="center center">
+                <div>
+                  <button mat-button (click)="product.quantity = product.quantity + 1">
+                    <mat-icon matTooltip="Ajouter au panier" class="quantity-icone">arrow_drop_up</mat-icon>
+                  </button>
+                </div>
+                <div *ngIf="product.quantity > 1">
+                  <button mat-button (click)="product.quantity = product.quantity - 1">
+                    <mat-icon matTooltip="Ajouter au panier" class="quantity-icone">arrow_drop_down</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+    </div>
+  </div>
+
+</div>

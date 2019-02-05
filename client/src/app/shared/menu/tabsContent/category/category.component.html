@@ -1,0 +1,158 @@
+<span><mat-icon>error</mat-icon> Veuillez sélectionner la categorie des produits que vous cherchez </span>
+<div fxLayout="row" fxLayoutAlign="center center" class="cards">
+  <div fxFlex="20" class="example-card">
+  <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Fruit</mat-card-title>
+        <mat-card-subtitle>Modifié le : 14/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="http://www.pngall.com/wp-content/uploads/2016/03/Fruit-PNG-Image.png" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+          {{FruitProducts}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="filterFruit()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="20" class="example-card">
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Viande</mat-card-title>
+        <mat-card-subtitle>Modifié le: 15/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="http://free-png.gisoft.ca/img2/food/viande-9.png" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+        {{meatNumber}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="filterMeat()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="20" class="example-card">
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Légumes</mat-card-title>
+        <mat-card-subtitle>Modifié le: 22/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://pngimage.net/wp-content/uploads/2018/06/legumes-png-1.png" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+        {{vegetableNumber}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="filterVegetable()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="20" class="example-card">
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Poissons</mat-card-title>
+        <mat-card-subtitle>Modifié le: 24/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://kz.all.biz/img/kz/catalog/421305.jpeg" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+        {{fishnumber}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="filterFish()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="cards">
+
+  <div fxFlex="20" class="example-card">
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Pains</mat-card-title>
+        <mat-card-subtitle>Modifié le: 24/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://stongs.com/wp-content/uploads/2016/11/bread.png" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+        {{breadNumber}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="filterBread()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="20" class="example-card">
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Frommages</mat-card-title>
+        <mat-card-subtitle>Modifié le: 24/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="http://www.demandsanddelivery.com/merchants/images/profile/business_details/fresh-products_(1).jpg" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+        {{milkNumber}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="filterMilk()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="20" class="example-card">
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Epices</mat-card-title>
+        <mat-card-subtitle>Modifié le: 04/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="http://www.bugharybiospices.com/assets/images/abot-right.png" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+        {{spicesNumber}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="filterSpices()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="20" class="example-card">
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Boissons</mat-card-title>
+        <mat-card-subtitle>Modifié le: 17/01/2018
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMXn77cmmUa1a8cifHYVjp3G_pRfP-wJwCps835ShXTwk7ABHD" class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="text-align: center">
+        {{liquidesNumber}} produits
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button  (click)="filterLiquides()"><mat-icon>reply</mat-icon>Séléctionner</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

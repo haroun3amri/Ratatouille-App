@@ -1,0 +1,44 @@
+
+<div>
+<mat-icon class="cart-icone">shopping_cart</mat-icon>
+</div>
+    <table mat-table class="mat-elevation-z8" width="100%">
+      <thead>
+      <th></th>
+      <th>Label</th>
+      <th>Tag</th>
+      <th>Categorie</th>
+      <th>Quantité</th>
+      <th></th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let prodcut of data.cart " mat-row>
+        <td align="center"><img src="{{prodcut.imageLink}}" width="35" height="35"/></td>
+        <td align="center">{{prodcut.title}}</td>
+        <td align="center">{{prodcut.tag}}</td>
+        <td align="center">{{prodcut.category}}</td>
+        <td align="center">X {{prodcut.quantity}}</td>
+        <td align="center">
+          <button mat-icon-button color="primary">
+            <mat-icon aria-label="Example icon-button with a heart icon" (click)="removeFromCart(prodcut)">delete
+            </mat-icon>
+          </button>
+        </td>
+
+
+      </tr>
+      </tbody>
+    </table>
+
+
+  <!-- Action Button -->
+  <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="center center" style="margin-right: 50% ">
+    <div>
+      <button mat-button
+              class="save-button mat-primary"
+              (click)="onNoClick()">
+        <b> Retournez à votre commande </b>
+      </button>
+    </div>
+  </div>
+

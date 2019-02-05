@@ -1,0 +1,83 @@
+@mixin mat-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 420px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  color: white;
+}
+
+div.content {
+  margin-left: 500px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.active-promotion-icon {
+  color: yellow;
+  @include mat-icon-size(26px);
+  background-size: 100% auto;
+}
+
+.unactive-promotion-icon {
+  color: darkgray;
+  @include mat-icon-size(26px);
+  background-size: 100% auto;
+}
+
+.percent-span {
+  color: darkgrey;
+  font-size: larger;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.header-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+.tool-bar-container {
+  margin-bottom: 4%;
+  margin-top: 0%;
+}
+
+

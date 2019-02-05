@@ -1,0 +1,13 @@
+@mixin mat-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
+
+.cart-icone {
+  color: dodgerblue;
+  @include mat-icon-size(64px);
+  background-size: 100% auto;
+  margin-left: 50%;
+}

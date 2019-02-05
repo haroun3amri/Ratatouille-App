@@ -1,0 +1,62 @@
+<form class="form-field" [formGroup]="form">
+
+  <div class="example-container">
+    <p>
+      <mat-form-field appearance="outline" style="width: 700px">
+        <mat-label>Numéro de la carte</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="controle1" required>
+        <mat-icon matSuffix>credit_card</mat-icon>
+        <mat-hint>Le numéro de 9 chiffre de votre carte bancaire</mat-hint>
+      </mat-form-field>
+      <mat-error *ngIf="controle1.touched && controle1.hasError('required')">
+        Numéro de la carte requis
+      </mat-error>
+      <mat-error *ngIf="controle1.touched && controle1.hasError('minlength')">
+        Numéro de la carte doit avoir 9 chiffres
+      </mat-error>
+
+      <mat-error *ngIf="controle1.touched && controle1.hasError('pattern')">
+        Ce champ doit etre des chiffres seulement
+      </mat-error>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" style="width: 700px">
+        <mat-label>Date de fin de validité</mat-label>
+          <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="controle3">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp
+                          startView="multi-year"
+                          (yearSelected)="chosenYearHandler($event)"
+                          (monthSelected)="chosenMonthHandler($event, dp)"
+                          panelClass="example-month-picker">
+          </mat-datepicker>
+        <mat-hint>La date d'expiration de votre carte bancaire</mat-hint>
+      </mat-form-field>
+      <mat-error *ngIf="controle2.touched && controle2.hasError('required')">
+        Date de fin de validité requis
+      </mat-error>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" style="width: 700px">
+        <mat-label>Cryptogramme visuel</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="controle3" required>
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-hint>Cryptogramme visuel</mat-hint>
+      </mat-form-field>
+      <mat-error *ngIf="controle3.touched && controle3.hasError('required')">
+        Cryptogramme visuel requis
+      </mat-error>
+      <mat-error *ngIf="controle3.touched && controle3.hasError('minlength')">
+        Numéro de la carte doit avoir 3 chiffres
+      </mat-error>
+
+      <mat-error *ngIf="controle3.touched && controle3.hasError('pattern')">
+        Ce champ doit etre des chiffres seulement
+      </mat-error>
+    </p>
+    <button mat-raised-button color="primary" style="width: 700px" (click)="onPaiement()"
+            [disabled]="!controle1.valid || !controle2.valid || !controle3.valid">Payer
+    </button>
+
+  </div>
+</form>

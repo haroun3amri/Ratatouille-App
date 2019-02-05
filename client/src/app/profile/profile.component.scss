@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  margin-top: 2%;
+}
+
+.logo-image {
+  margin-top: 5px;
+  margin-left: 50%;
+}
+
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 500px;
+  margin-left: 40%;
+}
+
+th, td {
+  padding: 15px;
+}
+
+.wrapper {
+  margin-left: 70px;
+  margin-top: 50px;
+}
