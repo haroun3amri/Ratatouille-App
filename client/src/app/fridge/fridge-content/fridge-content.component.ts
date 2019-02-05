@@ -4,7 +4,6 @@ import {Product} from "../../Models/product";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {DialogComponent} from "../../shared/menu/tabsContent/dialog/dialog.component";
 import {MatDialog, MatSnackBar} from "@angular/material";
-import {ComparatorComponent} from "../../shared/menu/tabsContent/product/comparator/comparator.component";
 
 @Component({
   selector: 'app-fridge-content',
@@ -17,6 +16,8 @@ export class FridgeContentComponent implements OnInit {
 
   @Input() products: Product[];
   @Input() Cart: Array<Product> = [];
+  @Input() selectedFridge: string = 'fridge1';
+
   rows: number[] ;
   ElementNumber: number;
   innerWidth: number;
@@ -44,19 +45,20 @@ export class FridgeContentComponent implements OnInit {
   }
 
   filterAccordingtoEconomique() {
-    this.products = productsMock;
+    this.products = productsMock as Product[];
     this.products = this.products.filter(e => e.tag === 'eco');
   }
   filterAccordingtoBiologique() {
-    this.products = productsMock;
+    this.products = productsMock as Product[];
     this.products = this.products.filter(e => e.tag === 'bio');
   }
   filterAccordingtoFavorite() {
-    this.products = productsMock;
+    this.products = productsMock as Product[];
     this.products = this.products.filter(e => e.isFavorite === true);
   }
+
   initialize() {
-    this.products = productsMock;
+    this.products = productsMock as Product[];
   }
 
   addToCart(product: Product) {
@@ -119,5 +121,22 @@ export class FridgeContentComponent implements OnInit {
     product.isFavorite =! product.isFavorite
 
   }
+
+  filterFruits() {
+    this.products =  productsMock as Product[];
+    this.products = this.products.filter(e =>e.category === 'fruits' && e.fridge === this.selectedFridge)
+  }
+
+  filterLegume(){this.products =  productsMock as Product[];
+    this.products = this.products.filter(e =>e.category === 'légumes' && e.fridge === this.selectedFridge)}
+
+  filterPates(){this.products =  productsMock as Product[];
+    this.products = this.products.filter(e =>e.category === 'pains et pates' && e.fridge === this.selectedFridge)}
+
+  filterBoissons(){this.products =  productsMock as Product[];
+    this.products = this.products.filter(e =>e.category === 'Boissons' && e.fridge === this.selectedFridge)}
+
+  filterViandes(){this.products =  productsMock as Product[];
+    this.products = this.products.filter(e =>e.category === 'viandes' && e.fridge === this.selectedFridge)}
 
 }

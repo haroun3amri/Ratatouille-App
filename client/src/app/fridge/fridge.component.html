@@ -1,18 +1,16 @@
-<div class="sidebar">
+<div class="sidebar"fxLayout="column" fxFlexAlign="center center">
 
-<img src="../../assets/fridge.png" width="450" height="600">
+<img mat-card-image src="../../assets/fridge.png" width="450" height="600">
 
-  <div class="connexion-panel" style="margin-lef: 100px">
+  <div class="connexion-panel" fxLayout="column">
     <h4>Connectez à votre figo : </h4>
-    <button mat-raised-button color="primary" style="width: 300px ; margin-top: 20px" (click)="filterfridge1()"> <mat-icon>lock_open</mat-icon>Se connecter au frigo 1</button>
-    <button mat-raised-button color="primary" style="width: 300px ; margin-top: 20px" (click)="filterfridge2()"> <mat-icon>lock_open</mat-icon> Se connecter au frigo 2</button>
-    <button mat-raised-button color="primary" style="width: 300px ; margin-top: 20px" (click)="filterfridge3()"> <mat-icon>lock_open</mat-icon>Se connecter au frigo 3</button>
-
+    <button mat-raised-button color="primary" style="width: 450px ; margin-top: 20px" (click)="filterfridge1()"> <mat-icon>lock_open</mat-icon>Se connecter au frigo 1</button>
+    <button mat-raised-button color="primary" style="width: 450px ; margin-top: 20px" (click)="filterfridge2()"> <mat-icon>lock_open</mat-icon> Se connecter au frigo 2</button>
+    <button mat-raised-button color="primary" style="width: 450px ; margin-top: 20px" (click)="filterfridge3()"> <mat-icon>lock_open</mat-icon>Se connecter au frigo 3</button>
   </div>
 
 </div>
 <div class="content">
-
-<app-fridge-content #fridge [products]="products" [Cart]="Cart"></app-fridge-content>
+<app-fridge-content #fridge [products]="products" [Cart]="Cart" [selectedFridge]="selectedFridge"></app-fridge-content>
 </div>
 

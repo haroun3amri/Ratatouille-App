@@ -1,0 +1,34 @@
+<div fxLayout="column" fxLayoutAlign="space-around center" style="display: inline-flex;">
+
+</div>
+
+<div fxLayout="row" style="display: inline-flex">
+
+  <div>
+    <div *ngFor="let i of rows " fxLayout="row" class="cards">
+
+      <div fxFlex="30" class="example-card" *ngFor="let recipe of recipes | slice:(i*ElementNumber):(i+1)*ElementNumber"
+           Style="border-style: dot-dash ; display: inline-flex ; height: 100%"
+           [style.width.%] ="80/ElementNumber"
+      >
+        <mat-card [class.mat-elevation-z8]="true">
+          <mat-card-header>
+            <mat-card-title>{{recipe.name}}</mat-card-title>
+            <mat-card-subtitle>{{recipe.nutrients_value}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src='{{recipe.image}}' class="card-image" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="custom-button" mat-button (click)="openDialog(recipe)"><mat-icon>reply</mat-icon>Afficher recette</button>
+          </mat-card-actions>
+        </mat-card>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

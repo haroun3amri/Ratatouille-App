@@ -1,9 +1,6 @@
-import {Component, EventEmitter, OnInit, Output, VERSION, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {productsMock} from "../fake-api/products-fake";
 import {Product} from "../Models/product";
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {MatDialog, MatSnackBar} from "@angular/material";
-import {DialogComponent} from "../shared/menu/tabsContent/dialog/dialog.component";
 import {FridgeContentComponent} from "./fridge-content/fridge-content.component";
 
 @Component({
@@ -17,27 +14,32 @@ export class FridgeComponent implements OnInit {
 
   products = productsMock;
   Cart: Array<Product> = [];
-  constructor() { }
+  selectedFridge: string = 'fridge1';
+
+  constructor() {
+  }
 
   ngOnInit() {
 
   }
 
   filterfridge1() {
-    this.fridge.products = this.products;
+    this.fridge.products = this.products as Product[];
     this.fridge.products = this.fridge.products.filter(e => e.fridge === 'fridge1');
+    this.selectedFridge = 'fridge1';
   }
 
   filterfridge2() {
-    this.fridge.products = this.products;
+    this.fridge.products = this.products as Product[];
     this.fridge.products = this.fridge.products.filter(e => e.fridge === 'fridge2');
+    this.selectedFridge = 'fridge2';
   }
 
   filterfridge3() {
-    this.fridge.products = this.products;
+    this.fridge.products = this.products as Product[];
     this.fridge.products = this.fridge.products.filter(e => e.fridge === 'fridge3');
+    this.selectedFridge = 'fridge3';
   }
-
 
 
 }

@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {
-  MatButtonModule, MatButtonToggleModule, MatCardModule,
-   MatExpansionModule,
+  MatButtonModule, MatButtonToggleModule, MatCardModule, MatChipsModule, MatDividerModule,
+  MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule, MatTableModule
@@ -27,11 +27,14 @@ import { ProposComponent } from './propos/propos.component';
 import { PromoDialogComponent } from './promo-dialog/promo-dialog.component';
 import { FridgeComponent } from './fridge/fridge.component';
 import { FridgeContentComponent } from './fridge/fridge-content/fridge-content.component';
+import { RecipeComponent } from './recipe/recipe.component';
+import { RecipeDialogComponent } from './recipe/recipe-dialog/recipe-dialog.component';
 
 
 const appRoutes: Routes = [
   { path: '',   component: CommandTabsComponent },
   { path: 'statistics',   component: StatisticsComponent },
+  { path: 'recipe',   component: RecipeComponent },
   { path: 'profile',   component: ProfileComponent },
   { path: 'login',   component: LoginComponent },
   { path: 'propos',   component: ProposComponent },
@@ -59,7 +62,9 @@ const appRoutes: Routes = [
     ProposComponent,
     PromoDialogComponent,
     FridgeComponent,
-    FridgeContentComponent
+    FridgeContentComponent,
+    RecipeComponent,
+    RecipeDialogComponent
 
   ],
 
@@ -88,13 +93,16 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatButtonToggleModule,
     BrowserAnimationsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatChipsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
     LoginDialogComponent,
-    PromoDialogComponent
+    PromoDialogComponent,
+    RecipeDialogComponent
   ],
 
 })

@@ -7,22 +7,32 @@
 }
 
 .example-card {
-  width: 200px;
-  margin: 30px;
+  width: 500px;
+  margin: 50px;
+  display: table-column;
 
 }
 
 .cards {
   min-width: 1000px;
-  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .card-image {
-  height: 120px;
-  width: 120px;
+  height: 350px;
+  width: 480px;
   display: block;
   margin: auto;
 }
+
+.custom-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50%;
+  width: 90%;
+}
+
 
 .span-tag-bio {
   color: red;
