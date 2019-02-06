@@ -1,0 +1,54 @@
+<div>
+  <img  src="../../../assets/logo3.png" width="150" height="150" style="margin-left: 40%"/>
+</div>
+
+<div style="text-align: left">
+
+  <p>
+    <span> ingredients: </span><mat-chip *ngFor="let recipe of data.recipe.ingredients"> {{recipe}} - </mat-chip>
+    <mat-divider></mat-divider>
+  </p>
+
+  <p>
+    <span>temps de preparation :  <b>{{data.recipe.temps}} </b> </span> <br/>
+    <mat-divider></mat-divider>
+    <span>Nombre de personne: <b>{{data.recipe.personnes}} </b> </span><br/>
+    <mat-divider></mat-divider>
+    <span>
+       <b>{{data.recipe.etape1}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape2}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape3}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape4}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape5}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape6}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape7}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape8}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape9}}</b> <br/>
+          <mat-divider></mat-divider>
+       <b>{{data.recipe.etape10}}</b> <br/>
+
+    </span>
+    <mat-divider></mat-divider>
+  </p>
+</div>
+
+
+
+<!-- Action Button -->
+<div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="center center" style="margin-right: 60% ">
+  <div>
+    <button mat-button
+            class="save-button mat-primary"
+            (click)="onNoClick()">
+      <b> Retour </b>
+    </button>
+  </div>
+</div>

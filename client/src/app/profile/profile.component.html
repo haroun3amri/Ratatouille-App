@@ -1,57 +1,166 @@
+
 <div class="wrapper">
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <img src="../../assets/logo.png" width="200" height="200">
+  <div class="additional-block estateinfo-block">
+    <div class="box-container">
+      <div class="image-container">
+        <img src="../../assets/salma.jpeg" width="150" height="150"/>
+      </div>
+      <div class="estate-info">
+        <h2>
+          {{actuelUser.fistName}} {{actuelUser.lastName}}
+        </h2>
+        <div class="item">
+          <div class="value link">
+            1 Rue Saint Honorat
+          </div>
+        </div>
+        <div class="item">
+          <div class="value link">
+            06500 Juan les pins Antibes
+          </div>
+        </div>
+        <div class="item">
+          <div class="value link">
+             Nice France
+          </div>
+        </div>
+        <div class="item">
+          <div class="value link">
+            + (000) 1577 548544
+          </div>
+        </div>
+      </div>
+      <ul class="buttons">
+        <li>
+          <i class="icon-home"></i>Espace frigo
+        </li>
+        <li>
+          <i class="icon-envelope"></i>Espace recette
+        </li>
+        <li>
+          <i class="icon-trash"></i>Escpace Dietitique
+        </li>
+      </ul>
+    </div>
   </div>
-<table width="500px">
-<tbody>
-  <tr >
-  <td>Nom d'utilsateur: </td>
-    <td><b>{{actuelUser.userName}}</b></td>
-  </tr>
-  <tr>
-  <td>Nom: </td>
-    <td><b>{{actuelUser.fistName}}</b></td>
-  </tr>
-  <tr>
-    <td>Prénom: </td>
-    <td><b>{{actuelUser.lastName}}</b></td>
-  </tr>
-  <tr>
-    <td>Date de naissance: </td>
-    <td><b>{{actuelUser.BirthDay}}</b></td>
-  </tr>
-  <tr>
-  <td>Lieur de naissance: </td>
-    <td><b>{{actuelUser.BirthPlace}}</b></td>
-  </tr>
-  <tr>
-  <td>Addresse: </td>
-    <td><b>{{actuelUser.Address}}</b></td>
-  </tr>
-  <tr>
-    <td>Preférences: </td>
-    <td><b>{{actuelUser.Preference}}</b></td>
-  </tr>
+  <div class="additional-block">
+    <h2>
+      Profil nutritionnel
+    </h2>
+    <div class="address-details">
+      <div class="item">
+        <div class="label">
+          Poids
+        </div>
+        <div class="value">
+          {{actuelUser.Poids}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="label">
+          Taille
+        </div>
+        <div class="value">
+          {{actuelUser.height}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="label">
+          Sexe
+        </div>
+        <div class="value">
+          {{actuelUser.Sexe}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="label">
+          Préference
+        </div>
+        <div class="value">
+          {{actuelUser.Preference}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="label">
+          Poids préferable
+        </div>
+        <div class="value">
+          {{actuelUser.goalPoids}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="label">
+          Santé
+        </div>
+        <div class="value">
+          Bonne
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="additional-block">
+    <h2>
+      Resumé
+    </h2>
+    <p>
+      Je suis Salma Sfar, une fille jeune et active. j'aime les voyages et le sport . je donne beaucoup d'imprtance à ma santé et mon alimentation.
+    </p>
+  </div>
 
-  <tr>
-    <td>Poids: </td>
-    <td><b>{{actuelUser.Poids}}</b></td>
-  </tr>
-  <tr>
-    <td>Taille: </td>
-    <td><b>{{actuelUser.height}}</b></td>
-  </tr>
+  <div class="additional-block" fxlayout="row" style="display: inline-flexs">
 
-  <tr>
-    <td>Sexe</td>
-    <td><b>{{actuelUser.Sexe}}</b></td>
-  </tr>
 
-  <tr>
-    <td>Poids souhaité</td>
-    <td><b>{{actuelUser.goalPoids}}</b></td>
-  </tr>
+    <div>
+    <h2>
+      Objectifs
+    </h2>
+      <p>
+      Poids actuel : {{value}} kg
+      </p>
+    <hr>
+      <div style="margin-left: 50px">
+      <mat-list role="list">
+        <mat-list-item role="listitem">Poids le 01/01/2019 : <b>64 kg</b></mat-list-item>
+        <mat-list-item role="listitem">Poids le 01/02/2019 : <b>63 kg</b></mat-list-item>
+        <mat-list-item role="listitem">Poids le 01/03/2019 : <b>61 kg</b></mat-list-item>
+        <mat-list-item role="listitem">Poids le 01/04/2019 : <b>68 kg</b></mat-list-item>
+        <mat-list-item role="listitem">Poids le 01/05/2019 : <b>63 kg</b></mat-list-item>
+        <mat-list-item role="listitem">Poids le 01/06/2019 : <b>61 kg</b></mat-list-item>
+      </mat-list>
 
-</tbody>
-</table>
+      <hr>
+      <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="poids actuel" [(ngModel)]="value">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+      <div class="additional-block">
+    <h2>
+      Consommation alimentaire en KCal/jours
+    </h2>
+    <div style="display: inline-block; margin-left: 30% ">
+      <ngx-charts-pie-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="single"
+        [legend]="showLegend"
+        [explodeSlices]="explodeSlices"
+        [labels]="showLabels"
+        [doughnut]="doughnut"
+        [gradient]="gradient"
+        (select)="onSelect($event)">
+      </ngx-charts-pie-chart>
+    </div>
+
+    </div>
+    </div>s
+
+
+
+  </div>
+
+
 </div>

@@ -2,7 +2,7 @@
 <div class="wrapper">
 <div FxLayout="row" class="statistic-section">
   <div>
-<div> <b>Variation de nombre des clients par marché chaque année</b></div>
+<div> <b>Valeurs nutritionnelles </b></div>
 <div style="display: inline-block">
   <ngx-charts-line-chart
     [view]="view"
@@ -20,35 +20,82 @@
     [timeline]="timeline"
     (select)="onSelect($event)">
   </ngx-charts-line-chart>
+
+  <div style="display: inline-block">
+    <ngx-charts-area-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      (select)="onSelect($event)">
+    </ngx-charts-area-chart>
+  </div>
 </div>
+</div>
+
+  <div fxFlex="30" class="example-card"
+       Style="border-style: dot-dash  ; height: 100% ; width: 500px; margin-left: 50px"
+  >
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Salade</mat-card-title>
+        <mat-card-subtitle>123KCal
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src='https://www.diyas-salads.fr/wp-content/uploads/2018/02/Salade-compose%CC%81e.png' class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="openDialog(recipes[0])"><mat-icon>reply</mat-icon>Afficher recette</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+  <div fxFlex="30" class="example-card"
+       Style="border-style: dot-dash  ; height: 100% ; width: 500px; margin-left: 50px"
+  >
+    <mat-card [class.mat-elevation-z8]="true">
+      <mat-card-header>
+        <mat-card-title>Soupe</mat-card-title>
+        <mat-card-subtitle>876KCal
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src='https://www.edwards-sandwiches.ch/278-large_default/soupe-du-jour.jpg' class="card-image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="custom-button" mat-button (click)="openDialog(recipes[1])"><mat-icon>reply</mat-icon>Afficher recette</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
   </div>
 
 <div>
-<div> <b>Variation de nombre des clients par marché chaque année</b></div>
-
-<div style="display: inline-block">
-  <ngx-charts-area-chart
-    [view]="view"
-    [scheme]="colorScheme"
-    [results]="multi"
-    [gradient]="gradient"
-    [xAxis]="showXAxis"
-    [yAxis]="showYAxis"
-    [legend]="showLegend"
-    [showXAxisLabel]="showXAxisLabel"
-    [showYAxisLabel]="showYAxisLabel"
-    [xAxisLabel]="xAxisLabel"
-    [yAxisLabel]="yAxisLabel"
-    [autoScale]="autoScale"
-    (select)="onSelect($event)">
-  </ngx-charts-area-chart>
-</div>
-</div>
 
 </div>
 <br>
 <div>
-  <b> Total des commandes par marché </b>
+  <b> Valeurs nutritionnelles </b>
 </div>
 
 <div style="display: inline-block">

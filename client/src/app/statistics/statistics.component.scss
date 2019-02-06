@@ -7,3 +7,62 @@
   margin-top: 50px;
 }
 
+
+@mixin mat-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
+
+.example-card {
+  width: 300px;
+  margin: 50px;
+  display: table-column;
+
+}
+
+.cards {
+  min-width: 1000px;
+  display: inline-flex;
+}
+
+.card-image {
+  height: 150px;
+  width: 280px;
+  display: block;
+  margin: auto;
+}
+
+.custom-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50%;
+  width: 90%;
+}
+
+
+.span-tag-bio {
+  color: red;
+}
+
+.span-tag-eco {
+  color: green;
+}
+
+
+.cart-icone {
+  color: dodgerblue;
+  @include mat-icon-size(44px);
+  background-size: 100% auto;
+}
+
+quantity-icone {
+  color: dodgerblue;
+  @include mat-icon-size(14px);
+  background-size: 70% auto;
+}
+
+
+

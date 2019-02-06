@@ -201,7 +201,7 @@ export const productsMock = [
   },
   {
     id: 12,
-    title: 'mongo',
+    title: 'mangue',
     category: 'fruits',
     fridge: 'fridge3',
     tag: 'bio',
@@ -220,7 +220,7 @@ export const productsMock = [
   //---------------------------- Viande section--------------
   {
     id: 13,
-    title: 'viande de veau',
+    title: 'veau',
     category: 'viandes ',
     fridge: 'fridge1',
     tag: 'eco',
@@ -239,7 +239,7 @@ export const productsMock = [
 
   {
     id: 14,
-    title: 'cuisse de poulet',
+    title: 'poulet',
     category: 'viandes',
     fridge: 'fridge2',
     tag: 'eco',
@@ -259,7 +259,7 @@ export const productsMock = [
 
   {
     id: 15,
-    title: 'cuisse de poulet',
+    title: 'poulet',
     category: 'viandes',
     fridge: 'fridge3',
     tag: 'eco',
@@ -278,7 +278,7 @@ export const productsMock = [
 
   {
     id: 16,
-    title: 'Salami poulet',
+    title: 'jambon ',
     category: 'viandes',
     fridge: 'fridge2',
     tag: 'eco',
@@ -297,7 +297,7 @@ export const productsMock = [
 
   {
     id: 17,
-    title: 'viande agneaux ',
+    title: 'agneaux ',
     category: 'viandes',
     fridge: 'fridge3',
     tag: 'eco',
@@ -316,7 +316,7 @@ export const productsMock = [
 
   {
     id: 18,
-    title: 'viande canard ',
+    title: 'canard ',
     category: 'viandes',
     fridge: 'fridge2',
     tag: 'eco',
@@ -335,7 +335,7 @@ export const productsMock = [
 
   {
     id: 19,
-    title: 'viande porc ',
+    title: 'porc ',
     category: 'viandes',
     fridge: 'fridge1',
     tag: 'eco',
@@ -354,7 +354,7 @@ export const productsMock = [
 
   {
     id: 20,
-    title: 'viande hachée ',
+    title: 'viande',
     category: 'viandes',
     fridge: 'fridge2',
     tag: 'eco',
@@ -373,7 +373,7 @@ export const productsMock = [
 
   {
     id: 21,
-    title: 'Boeuf de Kobée ',
+    title: 'Boeuf ',
     category: 'viandes',
     fridge: 'fridge3',
     tag: 'eco',
@@ -392,7 +392,7 @@ export const productsMock = [
 
   {
     id: 22,
-    title: 'Boeuf de Kobée ',
+    title: 'Boeuf',
     category: 'viandes',
     fridge: 'fridge3',
     tag: 'eco',
@@ -528,7 +528,7 @@ export const productsMock = [
 
   {
     id: 31,
-    title: 'laitue',
+    title: 'laitus',
     category: 'légumes',
     fridge: 'fridge2',
     tag: 'bio',
@@ -547,7 +547,7 @@ export const productsMock = [
 
   {
     id: 32,
-    title: 'Carrot',
+    title: 'Carrote',
     category: 'légumes',
     fridge: 'fridge1',
     tag: 'bio',
@@ -566,7 +566,7 @@ export const productsMock = [
 
   {
     id: 33,
-    title: 'Chout fleur',
+    title: 'Choufleur',
     category: 'légumes',
     fridge: 'fridge2',
     tag: 'bio',
@@ -604,7 +604,7 @@ export const productsMock = [
 
   {
     id: 35,
-    title: 'Pomme de terre ',
+    title: 'Pattate',
     category: 'légumes',
     fridge: 'fridge3',
     tag: 'bio',
@@ -724,7 +724,7 @@ export const productsMock = [
 
   {
     id: 42,
-    title: 'Pain complet',
+    title: 'Pain ',
     fridge: 'fridge1',
     category: 'pains et pates',
     tag: 'bio',
@@ -742,7 +742,7 @@ export const productsMock = [
   },
   {
     id: 42,
-    title: 'Cousous tunisien Randa',
+    title: 'semoule',
     category: 'pains et pates',
     fridge: 'fridge3',
     tag: 'bio',
@@ -760,7 +760,7 @@ export const productsMock = [
   },
   {
     id: 43,
-    title: 'Pate Panzani',
+    title: 'Pate ',
     category: 'pains et pates',
     tag: 'bio',
     isFavorite: false, isInCart: false,
@@ -813,7 +813,7 @@ export const productsMock = [
 
   {
     id: 44,
-    title: 'jus casino orange',
+    title: 'jus',
     fridge: 'fridge2',
     category: 'Boissons',
     tag: 'bio',
@@ -832,7 +832,7 @@ export const productsMock = [
 
   {
     id: 44,
-    title: 'jus casino cocktail',
+    title: 'jus ',
     category: 'Boissons',
     fridge: 'fridge1',
     tag: 'bio',

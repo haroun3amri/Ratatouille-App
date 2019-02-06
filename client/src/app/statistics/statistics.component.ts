@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Recipe} from "../Models/Recipe";
+import {recipessMock} from "../fake-api/recette.mock";
+import {RecipeDialogComponent} from "../recipe/recipe-dialog/recipe-dialog.component";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-statistics',
@@ -7,37 +11,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticsComponent  {
 
+
+  recipes: Recipe[] = recipessMock as Recipe[];
+   public dialog: MatDialog;
+
   // data goes here
   public single = [
     {
-      "name": "Lidle",
+      "name": "lipides",
       "value": 1940000
     },
     {
-      "name": "Carrefour",
+      "name": "glucides",
       "value": 3000000
     },
     {
-      "name": "Util",
+      "name": "proteines",
       "value": 6200000
     },
     {
-      "name": "Spar",
+      "name": "aide gras",
       "value": 8700000
     },
     {
-      "name": "Monoprix",
+      "name": "sel",
       "value": 5700000
     },
     {
-      "name": "Casino",
+      "name": "energie",
       "value": 3200000
     }
   ];
 
   public multi = [
     {
-      "name": "Lidle",
+      "name": "lipides",
       "series": [
         {
           "name": "2010",
@@ -51,7 +59,7 @@ export class StatisticsComponent  {
     },
 
     {
-      "name": "Carrefour",
+      "name": "acide gras",
       "series": [
         {
           "name": "2010",
@@ -65,7 +73,7 @@ export class StatisticsComponent  {
     },
 
     {
-      "name": "Util",
+      "name": "glucides",
       "series": [
         {
           "name": "2010",
@@ -78,7 +86,7 @@ export class StatisticsComponent  {
       ]
     },
     {
-      "name": "Spar",
+      "name": "sel",
       "series": [
         {
           "name": "2010",
@@ -91,7 +99,7 @@ export class StatisticsComponent  {
       ]
     },
     {
-      "name": "Monoprix",
+      "name": "energie",
       "series": [
         {
           "name": "2010",
@@ -104,7 +112,7 @@ export class StatisticsComponent  {
       ]
     },
     {
-      "name": "Casino",
+      "name": "proteines",
       "series": [
         {
           "name": "2010",
@@ -143,4 +151,12 @@ export class StatisticsComponent  {
   showLabels = true;
   explodeSlices = false;
   doughnut = false;
+
+  public openDialog(recipe: Recipe) {
+    let dialogRef = this.dialog.open(RecipeDialogComponent, {
+      width: '890px',
+      data: {recipe: recipe}
+    });
+
+  }
 }
