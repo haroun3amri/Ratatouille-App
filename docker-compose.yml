@@ -7,5 +7,4 @@ services:
       - 4200:4200
     volumes:
       - ./client:/var/opt/client
-      - ./cache/npm:/root/.npm
 

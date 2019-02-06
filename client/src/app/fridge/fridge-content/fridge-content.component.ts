@@ -15,7 +15,7 @@ export class FridgeContentComponent implements OnInit {
 
 
 
-  @Input() products: Product[];
+  @Input() products: any[];
   @Input() Cart: Array<Product> = [];
   rows: number[] ;
   ElementNumber: number;
